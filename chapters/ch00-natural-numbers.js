@@ -191,7 +191,7 @@ window.CHAPTERS.push({
                             ctx.font = 'bold 16px -apple-system,sans-serif';
                             ctx.textAlign = 'center';
                             ctx.textBaseline = 'top';
-                            ctx.fillText('The Successor Chain:  0  \\u2192  S(0) = 1  \\u2192  S(1) = 2  \\u2192  ...', viz.width / 2, 15);
+                            ctx.fillText('The Successor Chain:  0  \u2192  S(0) = 1  \u2192  S(1) = 2  \u2192  ...', viz.width / 2, 15);
 
                             // Bottom label
                             ctx.fillStyle = viz.colors.text;
@@ -373,7 +373,7 @@ window.CHAPTERS.push({
                                 ctx.font = '14px -apple-system,sans-serif';
                                 ctx.textAlign = 'center';
                                 ctx.textBaseline = 'top';
-                                ctx.fillText('S(2) = S(b) = 3, but 2 \\u2260 b. Axiom 4 prevents this!', viz.width / 2, mergeY + 80);
+                                ctx.fillText('S(2) = S(b) = 3, but 2 \u2260 b. Axiom 4 prevents this!', viz.width / 2, mergeY + 80);
                             }
                         }
 
