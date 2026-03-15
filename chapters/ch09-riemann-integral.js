@@ -12,7 +12,16 @@ window.CHAPTERS.push({
             id: 'ch09-sec01',
             title: 'Darboux Sums: Upper and Lower Fences',
             content: `
+                <div class="env-block bridge">
+                    <div class="env-title">Bridge from Chapter 8</div>
+                    <div class="env-body">
+                        <p>In calculus, integration is introduced as "the area under a curve." Here we make this precise: which functions <em>can</em> be integrated, and when do Riemann sums converge to a well-defined value? The answer involves upper and lower sums, and the criterion for integrability connects back to the concepts of supremum and infimum from Chapter 1. Along the way, the uniform continuity results from Chapter 6 and the function-sequence interchange theorems from Chapter 8 will both play key roles.</p>
+                    </div>
+                </div>
+
                 <h2>Darboux Sums: Upper and Lower Fences</h2>
+
+                <p class="section-roadmap"><strong>Section roadmap.</strong> We introduce partitions, then define the upper and lower Darboux sums that bracket the true area from above and below. The Refinement Lemma shows that finer partitions tighten this bracket, setting the stage for the definition of integrability in Section 2.</p>
 
                 <p>Imagine you own a plot of land whose boundary is described by a curve \\(f\\) above the \\(x\\)-axis, from \\(x = a\\) to \\(x = b\\). You want to know the <strong>exact area</strong> of this plot. But how do you measure a region with a curved boundary?</p>
 
@@ -396,6 +405,8 @@ window.CHAPTERS.push({
             content: `
                 <h2>Riemann Integrability: When the Fences Meet</h2>
 
+                <p class="section-roadmap"><strong>Section roadmap.</strong> With Darboux sums in hand, we now ask: when do the upper and lower fences actually meet? We define the upper and lower integrals via supremum and infimum (Chapter 1 concepts at work again), state the \\(\\varepsilon\\)-criterion that serves as the practical test for integrability, and identify the major classes of integrable functions, including continuous and monotone functions.</p>
+
                 <p>The upper sums form a set bounded below (by any lower sum), and the lower sums form a set bounded above (by any upper sum). By the completeness of \\(\\mathbb{R}\\), both families have limiting values.</p>
 
                 <div class="env-block definition">
@@ -426,6 +437,8 @@ window.CHAPTERS.push({
                     </div>
                 </div>
 
+                <p>Notice that the existence of these two integrals depends on the <strong>completeness axiom</strong> (Chapter 1): we need the infimum and supremum of bounded subsets of \\(\\mathbb{R}\\) to actually exist. In an incomplete field like \\(\\mathbb{Q}\\), even this first step could fail.</p>
+
                 <p>The following criterion is the practical workhorse for proving integrability:</p>
 
                 <div class="env-block theorem">
@@ -449,6 +462,8 @@ window.CHAPTERS.push({
                 <div class="viz-placeholder" data-viz="integrability-epsilon"></div>
 
                 <h3>Classes of Integrable Functions</h3>
+
+                <p>Which functions pass the \\(\\varepsilon\\)-criterion? The two most important classes draw on results from earlier chapters: <strong>uniform continuity</strong> (Chapter 6) handles continuous functions, and <strong>monotonicity</strong> produces a telescoping bound.</p>
 
                 <div class="env-block theorem">
                     <div class="env-title">Theorem 9.7 — Continuous Functions are Integrable</div>
@@ -748,7 +763,9 @@ window.CHAPTERS.push({
             content: `
                 <h2>Properties of the Riemann Integral</h2>
 
-                <p>Once we know a function is integrable, we can manipulate its integral using a toolkit of properties that parallel the familiar rules of summation.</p>
+                <p class="section-roadmap"><strong>Section roadmap.</strong> Having established <em>which</em> functions are integrable, we now develop the algebraic and order-theoretic properties of the integral: linearity, monotonicity, the triangle inequality, additivity over intervals, products, and the Mean Value Theorem for integrals. These properties will be essential tools for the Fundamental Theorem of Calculus in the next section.</p>
+
+                <p>Once we know a function is integrable, we can manipulate its integral using a toolkit of properties that parallel the familiar rules of summation. Just as the limit laws for sequences (Chapter 2) let us combine limits algebraically, the integral inherits analogous structure from the underlying Darboux sums.</p>
 
                 <div class="env-block theorem">
                     <div class="env-title">Theorem 9.10 — Linearity of the Integral</div>
@@ -1053,7 +1070,9 @@ window.CHAPTERS.push({
             content: `
                 <h2>The Fundamental Theorem of Calculus</h2>
 
-                <p>We now arrive at the crown jewel of single-variable analysis: the <strong>Fundamental Theorem of Calculus</strong> (FTC). It reveals the profound duality between differentiation and integration — two operations that seem worlds apart are, in fact, inverses of each other.</p>
+                <p class="section-roadmap"><strong>Section roadmap.</strong> We prove the two parts of the Fundamental Theorem of Calculus. Part I shows that the accumulation function \\(F(x) = \\int_a^x f\\) is differentiable wherever \\(f\\) is continuous, connecting integration back to differentiation (Chapter 7). Part II provides the evaluation formula \\(\\int_a^b f = G(b) - G(a)\\) via antiderivatives, using the Mean Value Theorem for derivatives. Together, they unify the two central operations of calculus.</p>
+
+                <p>We now arrive at the crown jewel of single-variable analysis: the <strong>Fundamental Theorem of Calculus</strong> (FTC). It reveals the profound duality between differentiation and integration, two operations that seem worlds apart are, in fact, inverses of each other. The proof of Part I relies on the continuity of \\(f\\) (Chapter 6) and the Mean Value Theorem for integrals (Section 3), while Part II invokes the Mean Value Theorem for derivatives (Chapter 7). This is a moment where the entire course converges.</p>
 
                 <h3>Part I: Differentiation Undoes Integration</h3>
 
@@ -1368,7 +1387,9 @@ window.CHAPTERS.push({
             content: `
                 <h2>Improper Integrals</h2>
 
-                <p>The Riemann integral as defined requires a <strong>bounded</strong> function on a <strong>bounded interval</strong>. But many natural integrals violate one or both conditions. We handle these by taking limits.</p>
+                <p class="section-roadmap"><strong>Section roadmap.</strong> We extend the Riemann integral to two cases it was not designed for: infinite intervals (Type I) and unbounded functions (Type II). Convergence is defined via limits of proper integrals, and we develop comparison tests that parallel the series comparison tests from Chapter 3. We close with the distinction between absolute and conditional convergence, again echoing the series theory.</p>
+
+                <p>The Riemann integral as defined requires a <strong>bounded</strong> function on a <strong>bounded interval</strong>. But many natural integrals violate one or both conditions. We handle these by taking limits, just as we defined infinite series via limits of partial sums (Chapter 3). The analogy is deep: many of the convergence tests for improper integrals have direct counterparts in series theory.</p>
 
                 <h3>Type I: Infinite Intervals</h3>
 
@@ -1419,6 +1440,8 @@ window.CHAPTERS.push({
 
                 <h3>Comparison Tests</h3>
 
+                <p>Just as we compared series term-by-term in Chapter 3 (the Comparison Test and Limit Comparison Test for series), we can compare improper integrals function-by-function. The logic is identical: if a larger integral converges, so does a smaller one.</p>
+
                 <div class="env-block theorem">
                     <div class="env-title">Theorem 9.24 — Comparison Test for Improper Integrals</div>
                     <div class="env-body">
@@ -1460,6 +1483,13 @@ window.CHAPTERS.push({
                     <div class="env-body">
                         <p>\\(\\displaystyle\\int_1^\\infty \\frac{\\sin x}{x^2}\\,dx\\) converges absolutely (compare with \\(1/x^2\\)).</p>
                         <p>\\(\\displaystyle\\int_0^\\infty \\frac{\\sin x}{x}\\,dx\\) converges conditionally to \\(\\pi/2\\) (the Dirichlet integral).</p>
+                    </div>
+                </div>
+
+                <div class="env-block bridge">
+                    <div class="env-title">Looking Ahead to Chapter 10</div>
+                    <div class="env-body">
+                        <p>The Riemann integral completes our study of analysis on the real line. The final chapter generalizes everything (sequences, limits, continuity, completeness) from \\(\\mathbb{R}\\) to abstract <strong>metric spaces</strong>, revealing that the same ideas work in far more general settings. The distance \\(|x - y|\\) on \\(\\mathbb{R}\\) becomes an abstract metric \\(d(x,y)\\), open intervals become open balls, and the theorems we have proved for \\(\\mathbb{R}\\) extend to spaces of functions, sequences, and beyond.</p>
                     </div>
                 </div>
             `,

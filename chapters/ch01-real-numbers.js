@@ -24,6 +24,14 @@ window.CHAPTERS.push({
             content: `
                 <h2>The Rationals and Their Gaps</h2>
 
+                <div class="env-block motivation">
+                    <div class="env-title">From Natural Numbers to Real Numbers</div>
+                    <div class="env-body">
+                        <p>In the previous chapter, we built the natural numbers from the Peano axioms and equipped ourselves with mathematical induction, a powerful tool for proving statements about \\(\\mathbb{N}\\). But to do analysis, we need far more than the naturals. We need a number system where we can take limits, measure distances with arbitrary precision, and talk about continuity. That system is \\(\\mathbb{R}\\), the real numbers. Constructing \\(\\mathbb{R}\\) rigorously reveals a surprising fact: the rationals, despite being "everywhere," are riddled with invisible gaps.</p>
+                        <p><strong>Roadmap for this chapter:</strong> We first expose the gaps in \\(\\mathbb{Q}\\) (Section 1), then fill them using Dedekind cuts (Section 2). From this construction we extract the Least Upper Bound Property (Section 3), derive the Archimedean Property (Section 4), prove the density of both rationals and irrationals (Section 5), and finally survey how all these completeness results fit together (Section 6).</p>
+                    </div>
+                </div>
+
                 <p>The <strong>rational numbers</strong> \\(\\mathbb{Q} = \\{p/q : p \\in \\mathbb{Z},\\, q \\in \\mathbb{Z},\\, q \\neq 0\\}\\) seem to be everywhere.  Between any two rationals you can always find another (just take their average), so \\(\\mathbb{Q}\\) is <strong>dense in itself</strong>.  Surely such a crowded set has no room for holes?</p>
 
                 <p>It does.  The holes are invisible to the naked eye, but they are very much there.  We begin with the most famous one.</p>
@@ -335,6 +343,8 @@ window.CHAPTERS.push({
             content: `
                 <h2>Dedekind Cuts: Filling the Gaps</h2>
 
+                <p>Section 1 showed that \\(\\mathbb{Q}\\) has holes: there is no rational whose square is 2, and more generally, bounded sets of rationals can fail to have a least upper bound. The challenge now is to build a larger number system that fills every such gap. The key insight, due to Dedekind, is that we can define the missing numbers not by what they "are," but by the partition they create among the rationals.</p>
+
                 <p>In 1872, Richard Dedekind found a beautifully simple way to "fill in" the gaps of \\(\\mathbb{Q}\\).  His idea: instead of trying to <em>name</em> the missing number, define it by the <strong>partition it would create</strong> in \\(\\mathbb{Q}\\).</p>
 
                 <div class="env-block definition">
@@ -566,6 +576,8 @@ window.CHAPTERS.push({
             title: 'Completeness and the Least Upper Bound Property',
             content: `
                 <h2>Completeness and the Least Upper Bound Property</h2>
+
+                <p>Having constructed \\(\\mathbb{R}\\) via Dedekind cuts, we now extract the defining feature that makes it superior to \\(\\mathbb{Q}\\): every bounded set has a least upper bound. This single property, called completeness, is the engine behind virtually every major theorem in real analysis, from convergence of sequences to the existence of integrals.</p>
 
                 <p>We now state the single most important property of \\(\\mathbb{R}\\) — the <strong>axiom that fills every gap</strong>.</p>
 
@@ -839,6 +851,8 @@ window.CHAPTERS.push({
             content: `
                 <h2>The Archimedean Property</h2>
 
+                <p>The Least Upper Bound Property is a powerful abstract guarantee. But what concrete consequences does it have for everyday arithmetic on \\(\\mathbb{R}\\)? One of the first and most important is the Archimedean Property: the natural numbers (which we built in Chapter 0) are unbounded in \\(\\mathbb{R}\\). This rules out "infinitely large" or "infinitely small" real numbers, and it connects our abstract completeness axiom back to the familiar world of counting.</p>
+
                 <p>Can a positive number be so large that no natural number exceeds it?  Can a positive number be so small that it is less than \\(1/n\\) for every \\(n\\)?  The answer to both is <strong>no</strong>, and this is the <strong>Archimedean Property</strong> — a consequence of completeness.</p>
 
                 <div class="env-block theorem">
@@ -989,6 +1003,8 @@ window.CHAPTERS.push({
             title: 'Density of the Rationals and Irrationals',
             content: `
                 <h2>Density of the Rationals and Irrationals</h2>
+
+                <p>With the Archimedean Property in hand, we can now resolve a paradox that has been lurking since Section 1. We showed that \\(\\mathbb{Q}\\) has gaps, yet we also claimed the rationals are "everywhere." The Archimedean Property lets us make this precise: between any two real numbers, no matter how close, there is always a rational, and always an irrational. The gaps are real, but they are invisible at every scale.</p>
 
                 <p>We began this chapter by noting that the rationals are "everywhere" yet have gaps.  We can now make "everywhere" precise.</p>
 
@@ -1187,7 +1203,7 @@ window.CHAPTERS.push({
             content: `
                 <h2>The Completeness Landscape</h2>
 
-                <p>Let us step back and see the architecture of what we have built.</p>
+                <p>We have traveled a long path: from the gaps in \\(\\mathbb{Q}\\), through Dedekind's construction, to the LUB Property, the Archimedean Property, and the density theorems. Each result followed logically from the one before. Let us step back and see the architecture of what we have built.</p>
 
                 <div class="env-block remark">
                     <div class="env-title">The Logical Chain</div>
@@ -1225,6 +1241,13 @@ window.CHAPTERS.push({
                             <li>Cauchy Completeness + Archimedean Property</li>
                         </ul>
                         <p>We will prove several of these equivalences in the coming chapters.</p>
+                    </div>
+                </div>
+
+                <div class="env-block motivation">
+                    <div class="env-title">Looking Ahead: From Completeness to Limits</div>
+                    <div class="env-body">
+                        <p>We now have the complete real line, with its crucial Least Upper Bound Property. We have seen that this single axiom gives us the Archimedean Property, the density of both \\(\\mathbb{Q}\\) and the irrationals, and a web of equivalent completeness formulations. This completeness is exactly what we need to make <strong>limits</strong> rigorous. In the next chapter, we define sequences in \\(\\mathbb{R}\\) and the \\(\\varepsilon\\)-\\(N\\) definition of convergence. The reason limits "work" in \\(\\mathbb{R}\\) (and fail in \\(\\mathbb{Q}\\)) is precisely the completeness we have just established.</p>
                     </div>
                 </div>
             `,

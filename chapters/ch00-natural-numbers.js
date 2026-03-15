@@ -15,6 +15,15 @@ window.CHAPTERS.push({
                 <h2>The Peano Axioms</h2>
 
                 <div class="env-block intuition">
+                    <div class="env-title">The Road Ahead: Why Start Here?</div>
+                    <div class="env-body">
+                        <p>This is the first chapter of a course on <strong>real analysis</strong>, the rigorous study of the real number line. You might wonder: why begin with natural numbers instead of jumping straight to \\(\\mathbb{R}\\)?</p>
+                        <p>The answer is that the reals are <em>built</em> from simpler systems, layer by layer. From the natural numbers \\(\\mathbb{N}\\), we construct the integers \\(\\mathbb{Z}\\) (by introducing negation), then the rationals \\(\\mathbb{Q}\\) (by introducing division), and finally the reals \\(\\mathbb{R}\\) (by filling in the "gaps" in \\(\\mathbb{Q}\\)). If the foundation is shaky, everything above it collapses. So we begin at the very bottom: the natural numbers and the principle of induction.</p>
+                        <p>In this section, we lay down the <strong>Peano axioms</strong>, a precise set of rules that pin down exactly what the natural numbers are. We then explore what each axiom contributes and why removing any one of them leads to pathological number systems.</p>
+                    </div>
+                </div>
+
+                <div class="env-block intuition">
                     <div class="env-title">Why Do We Care?</div>
                     <div class="env-body">
                         <p>You have been using natural numbers since childhood: \\(0, 1, 2, 3, \\ldots\\) They seem so obvious that asking "what <em>are</em> they?" feels absurd. But mathematics demands precision. If we want to <em>prove</em> theorems about all real numbers, we need an unshakeable foundation, and that foundation begins with the natural numbers.</p>
@@ -79,6 +88,13 @@ window.CHAPTERS.push({
                     <div class="env-title">Convention</div>
                     <div class="env-body">
                         <p>Some authors start the natural numbers at \\(1\\) instead of \\(0\\). In this course, following Tao, we always have \\(0 \\in \\mathbb{N}\\). The choice is a convention; the mathematics works either way, but you should be aware of which convention a given text uses.</p>
+                    </div>
+                </div>
+
+                <div class="env-block intuition">
+                    <div class="env-title">Looking Ahead</div>
+                    <div class="env-body">
+                        <p>We now have a precise description of the natural numbers. But <em>describing</em> them is only the beginning. To actually <em>prove</em> facts about all natural numbers, we need a systematic technique. That technique is <strong>mathematical induction</strong>, which is Axiom 5 put to work. The next section shows how.</p>
                     </div>
                 </div>
             `,
@@ -439,6 +455,8 @@ window.CHAPTERS.push({
             content: `
                 <h2>Mathematical Induction</h2>
 
+                <p><strong>Goals of this section:</strong> State the principle of induction as a proof technique, walk through the anatomy of an induction proof, and practice on concrete examples (summation formulas, inequalities). By the end, you should be able to set up and execute a standard induction argument.</p>
+
                 <div class="env-block intuition">
                     <div class="env-title">The Domino Metaphor</div>
                     <div class="env-body">
@@ -527,6 +545,13 @@ window.CHAPTERS.push({
                     <div class="env-title">Induction Starting at \\(b \\neq 0\\)</div>
                     <div class="env-body">
                         <p>Induction need not start at \\(0\\). If you verify \\(P(b)\\) and prove \\(P(n) \\Rightarrow P(n+1)\\) for all \\(n \\geq b\\), you conclude \\(P(n)\\) for all \\(n \\geq b\\). This follows from standard induction applied to \\(Q(m) := P(m + b)\\).</p>
+                    </div>
+                </div>
+
+                <div class="env-block intuition">
+                    <div class="env-title">Looking Ahead</div>
+                    <div class="env-body">
+                        <p>Standard induction lets you assume \\(P(n)\\) to prove \\(P(n+1)\\). But some arguments require knowing \\(P(k)\\) for <em>all</em> \\(k \\leq n\\), not just the immediate predecessor. The next section introduces <strong>strong induction</strong>, which grants this extra power, and the closely related <strong>well-ordering principle</strong>.</p>
                     </div>
                 </div>
             `,
@@ -718,6 +743,8 @@ window.CHAPTERS.push({
             content: `
                 <h2>Strong Induction &amp; Well-Ordering</h2>
 
+                <p><strong>Goals of this section:</strong> Introduce strong induction (where the inductive hypothesis covers all predecessors, not just one), state the well-ordering principle, and prove that these two principles are equivalent to standard induction. Along the way, we see a classic application: every integer \\(\\geq 2\\) has a prime factorization.</p>
+
                 <div class="env-block intuition">
                     <div class="env-title">Motivation</div>
                     <div class="env-body">
@@ -807,6 +834,13 @@ window.CHAPTERS.push({
                             <li>The Well-Ordering Principle</li>
                         </ol>
                         <p>Each can be proved from either of the others. Different problems call for different formulations; flexibility in choosing the right one is a key mathematical skill.</p>
+                    </div>
+                </div>
+
+                <div class="env-block intuition">
+                    <div class="env-title">Looking Ahead</div>
+                    <div class="env-body">
+                        <p>We can now <em>prove</em> things about natural numbers, but we still cannot <em>compute</em> with them. What does \\(2 + 3\\) even mean when all we have is a successor function? The next section uses induction to <strong>define</strong> addition, multiplication, exponentiation, and ordering, building the full arithmetic of \\(\\mathbb{N}\\) from scratch.</p>
                     </div>
                 </div>
             `,
@@ -1001,6 +1035,8 @@ window.CHAPTERS.push({
             content: `
                 <h2>Recursive Definitions on \\(\\mathbb{N}\\)</h2>
 
+                <p><strong>Goals of this section:</strong> Use the recursion principle to rigorously define addition, multiplication, and exponentiation on \\(\\mathbb{N}\\). Prove the familiar algebraic properties (commutativity, associativity, distributivity). Finally, define the order relation \\(\\leq\\) and show it is a total order.</p>
+
                 <div class="env-block intuition">
                     <div class="env-title">Why Recursive Definitions?</div>
                     <div class="env-body">
@@ -1027,6 +1063,8 @@ window.CHAPTERS.push({
                 </div>
 
                 <h3>Defining Addition</h3>
+
+                <p>How do we define \\(m + n\\)? Intuitively, adding \\(n\\) to \\(m\\) means applying the successor function \\(n\\) times starting from \\(m\\). The recursion principle makes this precise: we specify what happens when we add \\(0\\) (nothing changes) and what happens when we add one more (apply successor once).</p>
 
                 <div class="env-block definition">
                     <div class="env-title">Definition 0.11 (Addition)</div>
@@ -1084,6 +1122,8 @@ window.CHAPTERS.push({
                 </div>
 
                 <h3>Defining Multiplication</h3>
+
+                <p>With addition established, multiplication follows the same recursive pattern: multiplying \\(m\\) by \\(n\\) means adding \\(m\\) to itself \\(n\\) times.</p>
 
                 <div class="env-block definition">
                     <div class="env-title">Definition 0.14 (Multiplication)</div>
@@ -1146,6 +1186,8 @@ window.CHAPTERS.push({
 
                 <h3>The Ordering on \\(\\mathbb{N}\\)</h3>
 
+                <p>Arithmetic alone does not capture the idea that \\(2\\) is "less than" \\(5\\). To talk about size comparisons, inequalities, and bounds, we need an <strong>order relation</strong>. Remarkably, we can define it purely in terms of addition.</p>
+
                 <div class="env-block definition">
                     <div class="env-title">Definition 0.17 (Ordering)</div>
                     <div class="env-body">
@@ -1164,6 +1206,14 @@ window.CHAPTERS.push({
                             <li><strong>Total:</strong> For any \\(n, m\\), either \\(n \\leq m\\) or \\(m \\leq n\\).</li>
                         </ol>
                         <p>That is, \\((\\mathbb{N}, \\leq)\\) is a <strong>total order</strong>, and by the well-ordering principle, it is moreover a <strong>well-order</strong>.</p>
+                    </div>
+                </div>
+
+                <div class="env-block intuition">
+                    <div class="env-title">Chapter Summary and Bridge to Chapter 1</div>
+                    <div class="env-body">
+                        <p>Starting from five axioms, we have built the entire arithmetic of the natural numbers: addition, multiplication, exponentiation, and a well-ordering. We proved every familiar property rigorously using induction.</p>
+                        <p>With \\(\\mathbb{N}\\) in hand, the next steps in the construction are: introduce <strong>negative numbers</strong> to get the integers \\(\\mathbb{Z}\\), then introduce <strong>fractions</strong> to get the rationals \\(\\mathbb{Q}\\). But the rationals have invisible gaps: for example, there is no rational number whose square is \\(2\\). The next chapter fills these gaps using <strong>Dedekind cuts</strong> (or equivalent constructions) to build the <strong>complete</strong> real number line \\(\\mathbb{R}\\), the central object of this entire course.</p>
                     </div>
                 </div>
             `,

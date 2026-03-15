@@ -15,6 +15,15 @@ window.CHAPTERS.push({
             content: `
                 <h2>Pointwise Convergence of Function Sequences</h2>
 
+                <div class="env-block remark">
+                    <div class="env-title">From Individual Functions to Sequences of Functions</div>
+                    <div class="env-body">
+                        <p>Chapters 2 through 7 studied properties of individual functions: continuity, limits, and differentiation. But in practice we often approximate functions by simpler ones, whether Taylor polynomials, Fourier sums, or step functions. When does a sequence of approximations \\(f_n\\) preserve the properties of the limit \\(f\\)? Pointwise convergence turns out to be insufficient; we will need the stronger notion of <strong>uniform convergence</strong>. This chapter develops that theory and applies it to power series and Taylor series.</p>
+                    </div>
+                </div>
+
+                <p class="bridge-sentence"><strong>Roadmap for this section.</strong> We define pointwise convergence, examine two instructive examples where it fails to preserve continuity, and motivate the need for something stronger.</p>
+
                 <p>In earlier chapters we studied sequences of <em>numbers</em>. Now we level up: what happens when each term of a sequence is an entire <strong>function</strong>?</p>
 
                 <p>Consider a sequence of functions \\(f_1, f_2, f_3, \\ldots\\) all defined on a common domain \\(D\\). At every fixed point \\(x \\in D\\) we get an ordinary numerical sequence \\(f_1(x), f_2(x), f_3(x), \\ldots\\)</p>
@@ -63,6 +72,8 @@ window.CHAPTERS.push({
                         <p>Pointwise convergence is the <em>natural</em> notion but it is too weak for most analytic operations. We cannot in general interchange limits with integrals or derivatives under mere pointwise convergence. The next section introduces the stronger notion that fixes this.</p>
                     </div>
                 </div>
+
+                <p class="bridge-sentence"><strong>Looking ahead.</strong> The root cause of these failures is that pointwise convergence allows \\(N\\) to depend on \\(x\\). If we demand a <em>single</em> \\(N\\) that works for all \\(x\\) simultaneously, we get <strong>uniform convergence</strong>, the subject of the next section.</p>
             `,
             visualizations: [
                 {
@@ -243,6 +254,8 @@ window.CHAPTERS.push({
             content: `
                 <h2>Uniform Convergence and the Tube Test</h2>
 
+                <p class="bridge-sentence"><strong>Roadmap for this section.</strong> We define uniform convergence, develop the \\(\\varepsilon\\)-tube test as a visual criterion, and prove the two central theorems: the uniform limit of continuous functions is continuous, and uniform convergence permits interchange of limits and integrals.</p>
+
                 <p>The weakness of pointwise convergence is that the "waiting time" \\(N\\) can vary wildly from point to point. Uniform convergence demands a <strong>single</strong> \\(N\\) that works for <em>all</em> points simultaneously.</p>
 
                 <div class="env-block definition">
@@ -303,6 +316,8 @@ window.CHAPTERS.push({
                         <p>Under mere pointwise convergence, the limit of integrals need not equal the integral of the limit. Think of a sequence of tall, thin bumps with area 1 that converge pointwise to 0.</p>
                     </div>
                 </div>
+
+                <p class="bridge-sentence"><strong>Connection to what follows.</strong> We now know <em>why</em> uniform convergence matters, but <em>how</em> do we prove a given series converges uniformly? For series of functions, the Weierstrass M-test provides the most widely used sufficient condition. That is the subject of the next section.</p>
             `,
             visualizations: [
                 {
@@ -471,6 +486,8 @@ window.CHAPTERS.push({
             content: `
                 <h2>Series of Functions and the Weierstrass M-Test</h2>
 
+                <p class="bridge-sentence"><strong>Roadmap for this section.</strong> We extend the notion of uniform convergence from sequences to <em>series</em> of functions, then prove the Weierstrass M-test, which reduces the problem of uniform convergence to bounding each term by a constant. This tool will be essential when we study power series in the next section.</p>
+
                 <p>Just as we built series from sequences of numbers, we can form <strong>series of functions</strong>:</p>
                 <p>\\[\\sum_{k=1}^{\\infty} g_k(x) = \\lim_{n \\to \\infty} \\underbrace{\\sum_{k=1}^{n} g_k(x)}_{S_n(x)}.\\]</p>
 
@@ -523,6 +540,8 @@ window.CHAPTERS.push({
                         <p>The M-test is sufficient but not necessary. A series can converge uniformly even if no bounding constants \\(M_k\\) with \\(\\sum M_k < \\infty\\) exist. It also requires absolute convergence, so conditionally convergent function series need other tools (like the Dirichlet test).</p>
                     </div>
                 </div>
+
+                <p class="bridge-sentence"><strong>What comes next.</strong> The most important class of function series in all of analysis is the <strong>power series</strong> \\(\\sum a_k (x - c)^k\\). The M-test applies beautifully here: on any closed interval strictly inside the radius of convergence, the series converges uniformly. We develop this theory next.</p>
             `,
             visualizations: [
                 {
@@ -706,6 +725,8 @@ window.CHAPTERS.push({
             content: `
                 <h2>Power Series and Radius of Convergence</h2>
 
+                <p class="bridge-sentence"><strong>Roadmap for this section.</strong> We introduce power series, prove the existence of a radius of convergence, show that power series converge uniformly on compact subsets (via the M-test from the previous section), and establish that power series can be differentiated and integrated term by term.</p>
+
                 <p>A <strong>power series</strong> centered at \\(c\\) is a series of the form</p>
                 <p>\\[\\sum_{k=0}^{\\infty} a_k (x - c)^k = a_0 + a_1(x-c) + a_2(x-c)^2 + \\cdots\\]</p>
 
@@ -769,6 +790,8 @@ window.CHAPTERS.push({
                 </div>
 
                 <div class="viz-placeholder" data-viz="power-series-derivative"></div>
+
+                <p class="bridge-sentence"><strong>From general to specific.</strong> So far we have treated power series as abstract objects \\(\\sum a_k (x-c)^k\\). But where do the coefficients \\(a_k\\) come from? When \\(f\\) is infinitely differentiable, the natural choice is \\(a_k = f^{(k)}(c)/k!\\), yielding the <strong>Taylor series</strong>. The next section asks the key question: does this series actually converge back to \\(f\\)?</p>
             `,
             visualizations: [
                 {
@@ -962,6 +985,8 @@ window.CHAPTERS.push({
             content: `
                 <h2>Taylor Series and Analytic Functions</h2>
 
+                <p class="bridge-sentence"><strong>Roadmap for this section.</strong> We connect the abstract power series theory to concrete functions through Taylor series. We prove Taylor's theorem with the Lagrange remainder, define analytic functions, and encounter the surprising fact that being infinitely differentiable does not guarantee analyticity.</p>
+
                 <p>Given a function \\(f\\) that is infinitely differentiable at \\(c\\), we can write down its <strong>Taylor series</strong>:</p>
                 <p>\\[\\sum_{k=0}^{\\infty} \\frac{f^{(k)}(c)}{k!}(x-c)^k = f(c) + f'(c)(x-c) + \\frac{f''(c)}{2!}(x-c)^2 + \\cdots\\]</p>
 
@@ -1018,6 +1043,13 @@ window.CHAPTERS.push({
                     <div class="env-title">The Bigger Picture</div>
                     <div class="env-body">
                         <p>Taylor series connect all the major themes of this course: sequences, series, continuity, differentiability, and integrability. A power series is the ultimate "nice" function — infinitely differentiable, integrable term by term, and completely determined by its coefficients. The theory of uniform convergence provides the rigorous foundation that makes these manipulations valid.</p>
+                    </div>
+                </div>
+
+                <div class="env-block remark">
+                    <div class="env-title">Chapter Summary and Bridge to the Riemann Integral</div>
+                    <div class="env-body">
+                        <p>Uniform convergence is the key that lets us interchange limits with continuity, differentiation, and integration. Throughout this chapter, we freely used the integral \\(\\int_a^b f_n\\) in our theorems, but we have not yet made integration itself rigorous. What exactly does \\(\\int_a^b f\\) mean, and for which functions does it exist? The next chapter constructs the <strong>Riemann integral</strong> from scratch, giving a precise foundation for the integrals that have appeared throughout our work.</p>
                     </div>
                 </div>
             `,

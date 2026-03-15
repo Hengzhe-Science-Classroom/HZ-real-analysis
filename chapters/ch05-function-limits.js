@@ -12,6 +12,13 @@ window.CHAPTERS.push({
             id: 'ch05-sec01',
             title: 'The Epsilon-Delta Definition of a Limit',
             content: `
+                <div class="env-block connection">
+                    <div class="env-title">Chapter Bridge: From Sequences to Functions</div>
+                    <div class="env-body">
+                        <p>In Chapter 2, we defined limits for sequences using the \\(\\varepsilon\\text{-}N\\) framework: a sequence \\((a_n)\\) converges to \\(L\\) if, for every \\(\\varepsilon > 0\\), all terms beyond some index \\(N\\) lie within \\(\\varepsilon\\) of \\(L\\). Now we adapt this idea to <strong>functions</strong>, replacing the index \\(N\\) with a distance \\(\\delta\\). The resulting \\(\\varepsilon\\text{-}\\delta\\) definition is the central concept of this chapter. The two viewpoints turn out to be tightly linked: the <em>sequential characterization of limits</em> (Theorem 5.4) states that \\(\\lim_{x \\to a} f(x) = L\\) if and only if \\(f(x_n) \\to L\\) for every sequence \\(x_n \\to a\\). Meanwhile, the topological language from Chapter 4 (neighborhoods, limit points, open sets) provides the natural setting for the definitions that follow.</p>
+                    </div>
+                </div>
+
                 <h2>The Epsilon-Delta Definition of a Limit</h2>
 
                 <p>In Chapter 4 we learned what it means for a <em>sequence</em> to converge. Now we ask a subtler question: what does it mean for a <strong>function</strong> \\(f\\) to approach a value \\(L\\) as its input \\(x\\) approaches some point \\(a\\)?</p>
@@ -271,6 +278,13 @@ window.CHAPTERS.push({
             title: 'The Sequential Characterization of Limits',
             content: `
                 <h2>The Sequential Characterization of Limits</h2>
+
+                <div class="env-block motivation">
+                    <div class="env-title">Why This Section Matters</div>
+                    <div class="env-body">
+                        <p>Section 1 gave us a precise definition, but working directly with \\(\\varepsilon\\text{-}\\delta\\) proofs can be laborious. Here we build a bridge back to Chapter 2: we show that function limits are completely determined by sequence limits. This equivalence has two payoffs. First, it lets us <em>prove</em> that limits exist by importing all our sequence machinery (algebra of limits, comparison theorems, monotone convergence). Second, it gives us the easiest method for <em>disproving</em> limits: find two sequences that yield different values.</p>
+                    </div>
+                </div>
 
                 <p>The \\(\\varepsilon\\text{-}\\delta\\) definition is precise but often cumbersome. Fortunately, there is an equivalent characterization using sequences that connects function limits directly to the sequence limits of Chapter 4.</p>
 
@@ -547,6 +561,13 @@ window.CHAPTERS.push({
             content: `
                 <h2>Limit Laws</h2>
 
+                <div class="env-block motivation">
+                    <div class="env-title">Section Roadmap</div>
+                    <div class="env-body">
+                        <p>With the sequential characterization in hand, we can now harvest the algebraic limit theorems from Chapter 2 and transplant them wholesale into the function setting. This section builds the computational toolkit (sum, product, quotient, composition rules) that lets us evaluate limits without returning to \\(\\varepsilon\\text{-}\\delta\\) arguments each time. We also preview the concept of <em>continuity</em> that will be the focus of Chapter 6.</p>
+                    </div>
+                </div>
+
                 <p>The sequential characterization makes it straightforward to inherit all the algebraic limit theorems from sequences. Here is the complete toolkit for computing limits.</p>
 
                 <div class="env-block theorem">
@@ -742,6 +763,13 @@ window.CHAPTERS.push({
             title: 'One-Sided Limits',
             content: `
                 <h2>One-Sided Limits</h2>
+
+                <div class="env-block motivation">
+                    <div class="env-title">Refining the Two-Sided View</div>
+                    <div class="env-body">
+                        <p>The two-sided limit \\(\\lim_{x \\to a} f(x) = L\\) requires that \\(f(x)\\) approach \\(L\\) from <em>every</em> direction. But many natural functions (step functions, piecewise definitions, absolute values) behave differently on opposite sides of a point. One-sided limits capture this asymmetry precisely. They will also play a central role in Chapter 6, where they characterize <em>jump discontinuities</em> and determine whether a function can be extended continuously to a boundary point.</p>
+                    </div>
+                </div>
 
                 <p>Sometimes a function approaches different values depending on whether \\(x\\) approaches \\(a\\) from the <strong>left</strong> or from the <strong>right</strong>. This leads to the notion of one-sided limits.</p>
 
@@ -1098,6 +1126,13 @@ window.CHAPTERS.push({
             content: `
                 <h2>Limits at Infinity & the Squeeze Theorem</h2>
 
+                <div class="env-block motivation">
+                    <div class="env-title">Extending the Framework</div>
+                    <div class="env-body">
+                        <p>Sections 1 through 4 addressed limits at a <em>finite</em> point \\(a\\). But analysis frequently asks what happens "in the long run" (as \\(x \\to \\pm\\infty\\)) or when outputs grow without bound (infinite limits). These extensions mirror the sequence-level notions from Chapter 2: \\(\\lim_{x \\to \\infty} f(x) = L\\) parallels \\(\\lim_{n \\to \\infty} a_n = L\\), and \\(\\lim_{x \\to a} f(x) = \\infty\\) parallels divergence to infinity. We close the chapter with the Squeeze Theorem, one of the most versatile proof techniques in analysis, which will reappear in our study of continuity, differentiability, and integration.</p>
+                    </div>
+                </div>
+
                 <p>So far we have studied \\(\\lim_{x \\to a} f(x)\\) where \\(a\\) is a real number. We now extend the concept in two directions: limits as \\(x \\to \\pm\\infty\\), and infinite limits.</p>
 
                 <h3>Limits at Infinity</h3>
@@ -1193,6 +1228,13 @@ window.CHAPTERS.push({
                     <div class="env-title">The Squeeze Theorem at Infinity</div>
                     <div class="env-body">
                         <p>The Squeeze Theorem also works for limits at infinity. If \\(g(x) \\le f(x) \\le h(x)\\) for all sufficiently large \\(x\\) and both \\(g, h \\to L\\) as \\(x \\to \\infty\\), then \\(f(x) \\to L\\).</p>
+                    </div>
+                </div>
+
+                <div class="env-block connection">
+                    <div class="env-title">Looking Ahead: From Limits to Continuity</div>
+                    <div class="env-body">
+                        <p>We can now rigorously evaluate limits of functions, whether at finite points, from one side, or at infinity. The natural next question is: <em>when does the limit equal the function value?</em> That is, when does \\(\\lim_{x \\to a} f(x) = f(a)\\)? This is the definition of <strong>continuity</strong>, the subject of Chapter 6. The consequences turn out to be surprisingly powerful: continuous functions on closed intervals attain their maximum, satisfy the Intermediate Value Theorem, and are uniformly continuous. All of these results rest on the limit theory we have built here.</p>
                     </div>
                 </div>
             `,

@@ -14,6 +14,13 @@ window.CHAPTERS.push({
             content: `
                 <h2>The Epsilon-Delta Definition of Continuity</h2>
 
+                <div class="env-block motivation">
+                    <div class="env-title">From Limits to Continuity</div>
+                    <div class="env-body">
+                        <p>In Chapter 5 we defined what it means for \\(\\lim_{x \\to a} f(x) = L\\). Continuity is the special case where \\(L = f(a)\\): the limit matches the function value. This seemingly simple condition, that the function has no "breaks," has deep consequences. The Intermediate Value Theorem (Section 3) and the Extreme Value Theorem (Section 4) both rely critically on the completeness of \\(\\mathbb R\\) established in Chapter 1 and the compactness results from Chapter 4. This chapter follows a clear arc: we define continuity (Sections 1--2), prove what continuous functions on intervals can do (Sections 3--4), and then refine the notion to uniform continuity (Section 5).</p>
+                    </div>
+                </div>
+
                 <p>Imagine you have a very powerful microscope pointed at the graph of a function.
                 You centre the view on a point \\((a, f(a))\\) and ask: <em>"If I zoom in enough
                 horizontally around \\(a\\), can I keep the output within any vertical band I
@@ -321,6 +328,8 @@ window.CHAPTERS.push({
             content: `
                 <h2>Algebra of Continuous Functions</h2>
 
+                <p>Section 1 gave us the definition and a handful of worked examples. But proving continuity from scratch for every function would be tedious. Instead, we now develop <strong>algebraic closure rules</strong> that let us build a vast catalogue of continuous functions from a few verified building blocks, much as the limit laws in Chapter 5 let us compute limits without returning to \\(\\varepsilon\\text{-}\\delta\\) each time.</p>
+
                 <p>One of the great strengths of continuity is that it is preserved by all the
                 standard algebraic operations.  This lets us build a vast catalogue of
                 continuous functions from a few simple building blocks, rather than re-doing
@@ -566,6 +575,8 @@ window.CHAPTERS.push({
             title: 'The Intermediate Value Theorem',
             content: `
                 <h2>The Intermediate Value Theorem</h2>
+
+                <p>With the definition and algebra of continuity in hand, we now turn to the first of two landmark theorems that reveal what continuity really buys us on closed intervals. The IVT says continuous functions hit every intermediate value; its proof will use the <strong>completeness of \\(\\mathbb R\\)</strong> (via the Nested Interval Property from Chapter 1) in an essential way.</p>
 
                 <p>The Intermediate Value Theorem (IVT) captures an intuitive idea:
                 <em>a continuous function cannot "jump" over any value</em>.  If a
@@ -815,6 +826,8 @@ window.CHAPTERS.push({
             content: `
                 <h2>The Extreme Value Theorem</h2>
 
+                <p>The IVT told us which values a continuous function attains; the EVT tells us it attains its <em>most extreme</em> values. Where the IVT proof used the Nested Interval Property (a consequence of completeness), the EVT proof uses the <strong>Bolzano-Weierstrass theorem</strong> from Chapter 4, which is equivalent to the statement that closed bounded intervals are <strong>compact</strong>. This is the second major payoff of the completeness and compactness machinery we built earlier.</p>
+
                 <p>The Extreme Value Theorem (EVT) says that a continuous function on a
                 <strong>closed bounded interval</strong> must attain its maximum and minimum
                 values.  It cannot escape to infinity; it cannot approach a supremum
@@ -1047,6 +1060,8 @@ window.CHAPTERS.push({
             content: `
                 <h2>Uniform Continuity & the Heine-Cantor Theorem</h2>
 
+                <p>The IVT and EVT showed that continuity on a closed bounded interval has powerful consequences. We now ask a subtler quantitative question: can the \\(\\delta\\) in the \\(\\varepsilon\\text{-}\\delta\\) definition be chosen <em>independently of the point</em>? This leads to <strong>uniform continuity</strong>, a stronger property that is automatic on compact domains (Heine-Cantor) and indispensable for the theory of integration in later chapters.</p>
+
                 <p>Ordinary (pointwise) continuity says: for each \\(\\varepsilon > 0\\) and each point \\(a\\), there is a \\(\\delta\\) that works — but this \\(\\delta\\) is allowed to depend on <em>which point</em> \\(a\\) you are at.  <strong>Uniform continuity</strong> demands a single \\(\\delta\\) that works everywhere at once.</p>
 
                 <div class="env-block definition">
@@ -1124,6 +1139,13 @@ window.CHAPTERS.push({
                     <div class="env-body">
                         <p style="text-align:center;">\\(\\text{Lipschitz} \\;\\Longrightarrow\\; \\text{uniformly continuous} \\;\\Longrightarrow\\; \\text{continuous}\\)</p>
                         <p>\\(\\sqrt{x}\\) on \\([0,\\infty)\\) is uniformly continuous but NOT Lipschitz (the derivative blows up at 0).  \\(x^2\\) on \\(\\mathbb R\\) is continuous but NOT uniformly continuous.  On a compact interval \\([a,b]\\), continuous = uniformly continuous (Heine-Cantor), and if \\(f'\\) exists and is bounded, then \\(f\\) is Lipschitz.</p>
+                    </div>
+                </div>
+
+                <div class="env-block motivation">
+                    <div class="env-title">Looking Ahead: From Continuity to Differentiation</div>
+                    <div class="env-body">
+                        <p>Continuity describes functions without breaks: the output changes by an arbitrarily small amount when the input changes by a small enough amount. But we can ask a finer question: <em>how fast</em> does a continuous function change? This leads to <strong>differentiation</strong> (Chapter 7), where the derivative is defined as a limit of difference quotients, \\(f'(a) = \\lim_{x \\to a} \\frac{f(x) - f(a)}{x - a}\\). The limit machinery from Chapter 5 and the continuity framework from this chapter will be the foundation for everything that follows.</p>
                     </div>
                 </div>
             `,

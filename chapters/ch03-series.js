@@ -12,7 +12,16 @@ window.CHAPTERS.push({
             id: 'ch03-sec01',
             title: 'Series as Partial Sums',
             content: `
+                <div class="env-block bridge">
+                    <div class="env-title">Bridge from Chapter 2</div>
+                    <div class="env-body">
+                        <p>We have mastered convergence of sequences. A series \\(\\sum a_n\\) is nothing but a sequence of partial sums \\(S_N = a_1 + a_2 + \\cdots + a_N\\). So everything we learned about sequence convergence applies directly. The new challenge is developing practical tests for when these partial sums converge, since computing them explicitly is rarely feasible.</p>
+                    </div>
+                </div>
+
                 <h2>Series as Partial Sums</h2>
+
+                <p class="section-roadmap"><strong>Roadmap.</strong> We begin by defining series through partial sums, establishing the geometric and telescoping series as our first concrete examples. We then prove the divergence test, a necessary (but not sufficient) condition for convergence, which will motivate the more powerful tests in subsequent sections.</p>
 
                 <p>A <strong>series</strong> is what happens when you try to add up infinitely many numbers. But what does that even mean? We cannot literally perform infinitely many additions, so we need a rigorous definition.</p>
 
@@ -76,6 +85,8 @@ window.CHAPTERS.push({
                         <p>If \\(\\sum a_n\\) and \\(\\sum b_n\\) converge, then \\(\\sum (\\alpha a_n + \\beta b_n) = \\alpha \\sum a_n + \\beta \\sum b_n\\) for any constants \\(\\alpha, \\beta\\). However, if both diverge, the combination might converge (e.g., \\(a_n = 1/n\\), \\(b_n = -1/n\\)).</p>
                     </div>
                 </div>
+
+                <p class="section-connection"><strong>Looking ahead.</strong> The divergence test only detects divergence; it can never confirm convergence. We need more refined tools. In the next section, we develop the <em>comparison</em> and <em>integral</em> tests, which work by bounding our series against something we already understand.</p>
             `,
             visualizations: [
                 {
@@ -383,6 +394,8 @@ window.CHAPTERS.push({
             content: `
                 <h2>Comparison and Integral Tests</h2>
 
+                <p class="section-roadmap"><strong>Roadmap.</strong> This section introduces three related tools: the direct comparison test, the limit comparison test, and the integral test. All share a common philosophy: relate an unfamiliar series to a familiar benchmark. We culminate with the \\(p\\)-series classification, which becomes our most-used reference point for the rest of the chapter.</p>
+
                 <p>When we cannot find a closed form for partial sums, we need indirect methods to determine convergence. The first family of tests works by <strong>bounding</strong> our series against something we already understand.</p>
 
                 <div class="env-block theorem">
@@ -452,6 +465,8 @@ window.CHAPTERS.push({
                         <p>The integral test also gives a bound on the error of partial sums: \\(\\int_{N+1}^\\infty f(x)\\,dx \\leq \\sum_{n=N+1}^\\infty f(n) \\leq \\int_N^\\infty f(x)\\,dx\\).</p>
                     </div>
                 </div>
+
+                <p class="section-connection"><strong>Looking ahead.</strong> Comparison and integral tests require an external benchmark series. Can we determine convergence from the series' own internal structure? The ratio and root tests answer yes: they detect hidden geometric decay by examining consecutive term ratios or \\(n\\)-th roots.</p>
             `,
             visualizations: [
                 {
@@ -709,6 +724,8 @@ window.CHAPTERS.push({
             content: `
                 <h2>Ratio and Root Tests</h2>
 
+                <p class="section-roadmap"><strong>Roadmap.</strong> We present two self-contained convergence tests that require no external comparison series. The ratio test excels for series involving factorials and exponentials; the root test handles \\(n\\)-th power expressions. We also characterize when each test fails (the inconclusive case \\(L = 1\\)), which will motivate the need for the alternating series test in the next section.</p>
+
                 <p>The comparison and integral tests require us to find a comparison series. The <strong>ratio</strong> and <strong>root</strong> tests are self-contained: they examine the series' own internal growth rate.</p>
 
                 <div class="env-block theorem">
@@ -776,6 +793,8 @@ window.CHAPTERS.push({
                         <p>When \\(L = 1\\), anything can happen. Both \\(\\sum 1/n\\) and \\(\\sum 1/n^2\\) have \\(L = 1\\) for both tests, yet one diverges and the other converges. When ratio/root are inconclusive, fall back to comparison or integral tests.</p>
                     </div>
                 </div>
+
+                <p class="section-connection"><strong>Looking ahead.</strong> Every test so far handles series with nonnegative terms. But many important series, such as \\(\\sum (-1)^{n+1}/n\\), have terms that change sign. This leads to a fundamental distinction: <em>absolute</em> versus <em>conditional</em> convergence, with surprising consequences for how series behave.</p>
             `,
             visualizations: [
                 {
@@ -1085,6 +1104,8 @@ window.CHAPTERS.push({
             content: `
                 <h2>Absolute and Conditional Convergence</h2>
 
+                <p class="section-roadmap"><strong>Roadmap.</strong> We define absolute and conditional convergence, prove that absolute convergence implies convergence, and establish the alternating series test (Leibniz). The distinction between absolute and conditional convergence is not merely technical; it determines whether a series is robust (rearrangement-invariant) or fragile, as we will see in the final section.</p>
+
                 <p>So far, most tests handle series with nonnegative terms. What about series whose terms alternate in sign or are generally signed? This leads to a subtle but important distinction.</p>
 
                 <div class="env-block definition">
@@ -1148,6 +1169,8 @@ window.CHAPTERS.push({
                         <p>The bound \\(|S - S_N| \\leq b_{N+1}\\) is remarkably useful: the error is no more than the first omitted term. This makes alternating series very efficient for numerical approximation.</p>
                     </div>
                 </div>
+
+                <p class="section-connection"><strong>Looking ahead.</strong> We warned that conditional convergence is "fragile." How fragile exactly? The next section makes this precise with Riemann's rearrangement theorem: a conditionally convergent series can be rearranged to converge to <em>any</em> real number, or to diverge. This dramatically underscores why absolute convergence matters.</p>
             `,
             visualizations: [
                 {
@@ -1446,6 +1469,8 @@ window.CHAPTERS.push({
             content: `
                 <h2>Rearrangements</h2>
 
+                <p class="section-roadmap"><strong>Roadmap.</strong> We prove two contrasting theorems: Riemann's rearrangement theorem (conditional convergence allows arbitrary rearranged limits) and the rearrangement invariance of absolutely convergent series. We close with the Cauchy product, which connects series multiplication to the convergence type.</p>
+
                 <p>One of the most astonishing results in analysis: rearranging the terms of a conditionally convergent series can change its sum to <strong>anything you want</strong> — or make it diverge.</p>
 
                 <div class="env-block definition">
@@ -1508,6 +1533,13 @@ window.CHAPTERS.push({
                     <div class="env-title">Cauchy Product</div>
                     <div class="env-body">
                         <p>When multiplying two absolutely convergent series \\(\\sum a_n\\) and \\(\\sum b_n\\), the <strong>Cauchy product</strong> \\(\\sum c_n\\) where \\(c_n = \\sum_{k=0}^n a_k b_{n-k}\\) converges absolutely to \\((\\sum a_n)(\\sum b_n)\\). For conditionally convergent series, the Cauchy product may diverge (Mertens' theorem provides partial results).</p>
+                    </div>
+                </div>
+
+                <div class="env-block bridge">
+                    <div class="env-title">Bridge to Chapter 4</div>
+                    <div class="env-body">
+                        <p>Series concern convergence at individual points: does this particular sum converge, and to what value? But to deepen our understanding of functions and limits, we need to study the structure of the real line itself. Which subsets of \\(\\mathbb{R}\\) are open, closed, or compact? How do these topological properties interact with sequences and continuity? This is point-set topology, the subject of Chapter 4.</p>
                     </div>
                 </div>
             `,

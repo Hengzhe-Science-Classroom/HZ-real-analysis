@@ -15,6 +15,15 @@ window.CHAPTERS.push({
             content: `
                 <h2>Open and Closed Sets</h2>
 
+                <div class="env-block motivation">
+                    <div class="env-title">Where We Are and Where We're Going</div>
+                    <div class="env-body">
+                        <p>So far we have studied convergence of sequences and series, processes that happen "at a point." But many theorems (like the Extreme Value Theorem) require understanding which <em>sets</em> have nice properties. This chapter introduces the <strong>topological structure of the real line</strong>: open sets, closed sets, compact sets, and connected sets. These concepts provide the language for the deep theorems about functions in the coming chapters.</p>
+                    </div>
+                </div>
+
+                <p>We begin with the two most fundamental types of subsets: <strong>open sets</strong>, where every point has breathing room, and <strong>closed sets</strong>, which capture all their limit points. Understanding these two notions, and especially their interplay through complements, is the foundation for everything else in this chapter.</p>
+
                 <p>Imagine you are a mapmaker charting the real line \\(\\mathbb{R}\\).
                 Every region you draw is a <strong>subset</strong> of \\(\\mathbb{R}\\),
                 but not all regions are alike. Some have solid boundary walls;
@@ -304,6 +313,8 @@ window.CHAPTERS.push({
             title: 'Interior, Closure, and Boundary',
             content: `
                 <h2>Interior, Closure, and Boundary</h2>
+
+                <p>In the previous section we classified entire sets as open or closed. But what if a set is <em>neither</em>? Every set, regardless of type, has an <strong>open core</strong> (its interior), a <strong>sealed hull</strong> (its closure), and a <strong>thin border</strong> (its boundary). These three anatomical parts tell us exactly how far the set is from being open, how far from being closed, and where the transition from "inside" to "outside" occurs.</p>
 
                 <p>Given any set \\(A \\subseteq \\mathbb{R}\\), we can dissect it into
                 three anatomical regions: the soft interior, the fortified closure,
@@ -670,6 +681,8 @@ window.CHAPTERS.push({
             title: 'Compactness and Heine-Borel',
             content: `
                 <h2>Compactness and the Heine-Borel Theorem</h2>
+
+                <p>We now know what it means for a set to be open, closed, or somewhere in between. But analysis demands more: we need sets on which infinite processes (sequences, function evaluations, optimization) behave as tamely as finite ones. The concept that makes this possible is <strong>compactness</strong>. The Heine-Borel Theorem gives us a strikingly simple test for it in \\(\\mathbb{R}\\): a set is compact if and only if it is <em>closed and bounded</em>. This single theorem is the hidden engine behind the Extreme Value Theorem, uniform continuity, and much of what follows in later chapters.</p>
 
                 <p>Compactness is one of the most powerful ideas in analysis. Intuitively,
                 a compact set is one that is "finite-like" even though it may contain
@@ -1044,6 +1057,8 @@ window.CHAPTERS.push({
             content: `
                 <h2>Connectedness</h2>
 
+                <p>Compactness tells us when a set is "finite-like," but another fundamental property asks: <em>is the set all in one piece?</em> This is the question of <strong>connectedness</strong>. While compactness drives the Extreme Value Theorem (every continuous function on a compact set attains its max and min), connectedness drives the <strong>Intermediate Value Theorem</strong> (a continuous function on a connected set cannot skip values). Together, compactness and connectedness are the two pillars of topology that power the deepest theorems about continuous functions.</p>
+
                 <p>A connected set is one that cannot be "split into two separate pieces."
                 Imagine a continent: it is connected if you can walk from any point
                 to any other without crossing an ocean. A disconnected set is an
@@ -1343,6 +1358,8 @@ window.CHAPTERS.push({
             content: `
                 <h2>The Cantor Set</h2>
 
+                <p>We have now built a toolkit of topological properties: open, closed, compact, connected. How far can these concepts be pushed? The <strong>Cantor set</strong> is the answer. It is a single object that is simultaneously compact (closed and bounded), totally disconnected (no connected subset larger than a point), uncountable, and yet has total length zero. It shows that our topological concepts can combine in surprising ways, and it serves as a source of counterexamples throughout analysis.</p>
+
                 <p>The <strong>Cantor set</strong> is one of the most surprising objects in
                 mathematics. It is constructed by repeatedly deleting open middle thirds
                 from the interval \\([0, 1]\\). What remains after infinitely many
@@ -1426,6 +1443,13 @@ window.CHAPTERS.push({
                         <p>The Cantor set is a universal object: every compact, totally
                         disconnected, perfect metric space is homeomorphic to the Cantor set.
                         It appears throughout analysis, dynamics, and fractal geometry.</p>
+                    </div>
+                </div>
+
+                <div class="env-block motivation">
+                    <div class="env-title">Looking Ahead</div>
+                    <div class="env-body">
+                        <p>With the topology of \\(\\mathbb{R}\\) in place, we can now rigorously study <strong>functions</strong>. The next chapter defines limits of functions using the \\(\\varepsilon\\text{-}\\delta\\) framework, paralleling the \\(\\varepsilon\\text{-}N\\) definition we used for sequences. The topological language from this chapter, especially open sets and compactness, will be essential: continuity can be characterized as "preimages of open sets are open," and the Extreme Value Theorem holds precisely because \\([a,b]\\) is compact.</p>
                     </div>
                 </div>
             `,

@@ -12,6 +12,13 @@ window.CHAPTERS.push({
             id: 'ch07-sec01',
             title: 'The Derivative: Zooming In',
             content: `
+                <div class="env-block remark">
+                    <div class="env-title">From Continuity to Differentiation</div>
+                    <div class="env-body">
+                        <p>In Chapter 6 we studied <strong>continuity</strong>: the requirement that \\(f\\) has no breaks. Differentiation asks a sharper question: <em>how fast does \\(f\\) change?</em> The derivative \\(f'(a)\\) is defined as \\(\\lim_{x \\to a} \\frac{f(x)-f(a)}{x-a}\\), a limit of difference quotients. This chapter proves the rigorous versions of the results you may know from calculus: the Mean Value Theorem, L'Hopital's rule, and Taylor's theorem. Along the way, we will see that differentiability is strictly stronger than continuity, and that the Mean Value Theorem serves as the crucial bridge between local information (the derivative at each point) and global behavior (how the function values compare across an interval).</p>
+                    </div>
+                </div>
+
                 <h2>The Derivative: Zooming In</h2>
 
                 <p>Imagine pointing a <strong>mathematical microscope</strong> at a curve.  From far away the curve twists and bends, but as you zoom in on a single point, something remarkable happens: <em>the curve starts to look like a straight line</em>.  That straight line is the <strong>tangent line</strong>, and its slope is what we call the <strong>derivative</strong>.</p>
@@ -57,6 +64,8 @@ window.CHAPTERS.push({
                         <p>Write \\(f(x)-f(a) = \\frac{f(x)-f(a)}{x-a}\\cdot(x-a)\\).  As \\(x\\to a\\) the first factor tends to \\(f'(a)\\) (finite) and the second factor tends to \\(0\\), so \\(f(x)\\to f(a)\\). \\(\\square\\)</p>
                     </div>
                 </div>
+
+                <p>Theorem 7.2 places differentiability strictly above continuity in our hierarchy of regularity: every differentiable function is continuous, but the converse is far from true. This one-way implication is one of the most important structural facts in analysis.</p>
 
                 <div class="env-block warning">
                     <div class="env-title">The Converse Fails!</div>
@@ -322,6 +331,8 @@ window.CHAPTERS.push({
                 <h2>The Algebra of Derivatives</h2>
 
                 <p>Computing derivatives from the limit definition every time would be painfully slow.  Fortunately, a small collection of <strong>rules</strong> lets us differentiate virtually any function built from standard pieces.  Each rule is proved once from the definition; after that, we combine them freely.</p>
+
+                <p>In this section we establish the sum, product, quotient, and chain rules. Notice that every proof relies on the limit definition from Section 1, and the product rule proof crucially uses the fact that differentiability implies continuity (Theorem 7.2). These rules are the computational engine that makes the deeper theorems in Sections 3 through 5 practical.</p>
 
                 <div class="env-block theorem">
                     <div class="env-title">Theorem 7.3 — Arithmetic Rules</div>
@@ -690,6 +701,8 @@ window.CHAPTERS.push({
 
                 <p>If you drive 150 km in 2 hours, your average speed is 75 km/h.  Must there have been at least one instant where your speedometer read exactly 75?  Intuitively yes — and the <strong>Mean Value Theorem</strong> makes this precise.</p>
 
+                <p>The Mean Value Theorem (MVT) is the central result of this chapter, and arguably of all differential calculus. It is the bridge between <em>local</em> information (the derivative at individual points) and <em>global</em> information (how function values relate across an interval). We build up to it in two steps: first Rolle's Theorem (a special case where the endpoints have equal values), then the full MVT. From the MVT we immediately deduce that zero-derivative functions are constant, that positive-derivative functions are increasing, and much more. Both L'H\u00F4pital's Rule and Taylor's Theorem in the sections ahead depend on the MVT.</p>
+
                 <div class="env-block theorem">
                     <div class="env-title">Theorem 7.6 — Rolle's Theorem</div>
                     <div class="env-body">
@@ -960,6 +973,8 @@ window.CHAPTERS.push({
 
                 <p>What happens when a limit gives the indeterminate form \\(\\frac{0}{0}\\) or \\(\\frac{\\infty}{\\infty}\\)?  Rather than algebraic gymnastics, we can often <strong>differentiate the numerator and denominator separately</strong> and try again.</p>
 
+                <p>L'H\u00F4pital's Rule is a powerful application of the Mean Value Theorem from Section 3. Its proof applies the Cauchy Mean Value Theorem (a generalized MVT) to the numerator and denominator simultaneously. The intuition is simple: near the point where both \\(f\\) and \\(g\\) vanish, their linear approximations dominate, so the ratio \\(f(x)/g(x)\\) behaves like \\(f'(a)/g'(a)\\).</p>
+
                 <div class="env-block theorem">
                     <div class="env-title">Theorem 7.9 — L'H\u00F4pital's Rule (0/0 form)</div>
                     <div class="env-body">
@@ -1165,6 +1180,8 @@ window.CHAPTERS.push({
 
                 <p>The derivative gives a <em>first-order</em> (linear) approximation of a function near a point.  What if we want a <em>quadratic</em> approximation?  Or cubic?  <strong>Taylor's Theorem</strong> extends the microscope idea: instead of matching just the slope at a point, we match the slope <em>and</em> curvature <em>and</em> higher-order behavior, building ever-better polynomial approximations.</p>
 
+                <p>Taylor's Theorem is the culmination of this chapter. It generalizes the Mean Value Theorem (which is the special case \\(n = 0\\)) by repeatedly applying Rolle's Theorem to extract higher-order information. Where the MVT says \\(f(x) = f(a) + f'(c)(x - a)\\), Taylor says we can do far better: approximate \\(f\\) by a degree-\\(n\\) polynomial with an explicit error bound. This is the theoretical foundation for numerical computation, series expansions, and the analysis of convergence in the next chapter.</p>
+
                 <div class="env-block definition">
                     <div class="env-title">Definition 7.10 — Taylor Polynomial</div>
                     <div class="env-body">
@@ -1241,6 +1258,13 @@ window.CHAPTERS.push({
                     <div class="env-title">Corollary 7.12 — Uniqueness of Taylor Coefficients</div>
                     <div class="env-body">
                         <p>If \\(f(x) = \\sum_{k=0}^{n} c_k(x-a)^k + o((x-a)^n)\\), then \\(c_k = \\frac{f^{(k)}(a)}{k!}\\).  In other words, the Taylor coefficients are the <em>only</em> coefficients that match \\(f\\) to order \\(n\\) at \\(a\\).</p>
+                    </div>
+                </div>
+
+                <div class="env-block remark">
+                    <div class="env-title">Looking Ahead: Sequences and Series of Functions</div>
+                    <div class="env-body">
+                        <p>We have now studied individual functions thoroughly: their continuity (Chapter 6), their derivatives, and how well polynomials can approximate them. But what happens when we take a <em>sequence</em> of functions \\(f_n \\to f\\)? Does convergence preserve continuity? Differentiability? Integrability? The answer depends on the <em>mode</em> of convergence, which is the subject of Chapter 8. There we will see that pointwise convergence is too weak to preserve most properties, and that a stronger notion, uniform convergence, is needed to pass limits through derivatives and integrals.</p>
                     </div>
                 </div>
             `,

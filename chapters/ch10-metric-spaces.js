@@ -14,6 +14,14 @@ window.CHAPTERS.push({
             content: `
                 <h2>The Idea of a Metric Space</h2>
 
+                <div class="env-block motivation">
+                    <div class="env-title">Why Metric Spaces?</div>
+                    <div class="env-body">
+                        <p>Throughout this course, convergence has meant \\(|a_n - L| < \\varepsilon\\): closeness measured by absolute value on \\(\\mathbb{R}\\). But the same ideas (limits, continuity, compactness) work whenever we have a notion of "distance." A <strong>metric space</strong> is any set with a distance function satisfying three natural axioms. This chapter shows that the entire machinery of analysis generalizes beautifully.</p>
+                        <p><strong>Roadmap for this chapter:</strong> We begin by defining metric spaces and building a gallery of key examples (Section 1). We then develop the topology of metric spaces: open sets, closed sets, interior, closure, and boundary (Section 2). Next, convergence and completeness are generalized to the abstract setting, culminating in the Banach fixed-point theorem (Section 3). The chapter continues with compactness (Section 4) and connectedness (Section 5), showing how these fundamental properties transfer from \\(\\mathbb{R}\\) to arbitrary metric spaces.</p>
+                    </div>
+                </div>
+
                 <p>Throughout this course we have studied the real line \\(\\mathbb{R}\\) with its usual notion of distance \\(|x - y|\\). But many mathematical objects live in spaces far richer than a single number line. Points in the plane, continuous functions, sequences of numbers — all of these can be equipped with a notion of <strong>distance</strong>.</p>
 
                 <p>A <strong>metric space</strong> is any set \\(X\\) together with a function \\(d: X \\times X \\to [0,\\infty)\\) satisfying three axioms that capture the essence of what "distance" should mean.</p>
@@ -345,6 +353,8 @@ window.CHAPTERS.push({
             content: `
                 <h2>Open Sets, Closed Sets, and Topology</h2>
 
+                <p>In Chapter 4, we studied open and closed sets on the real line and saw how they govern convergence and continuity. Those ideas relied on the absolute-value distance \\(|x - y|\\). Now that we have a general distance function \\(d\\), the same definitions carry over word-for-word, and we discover that topology is really about the metric, not about \\(\\mathbb{R}\\) specifically.</p>
+
                 <p>The metric gives us a way to measure distance, but many fundamental concepts in analysis — continuity, convergence, compactness — depend not on the <em>specific distances</em> but on which sets are "open." This leads to the topological structure of a metric space.</p>
 
                 <div class="env-block definition">
@@ -630,6 +640,8 @@ window.CHAPTERS.push({
             title: 'Convergence and Completeness',
             content: `
                 <h2>Convergence and Completeness</h2>
+
+                <p>Recall how central the Cauchy criterion was in Chapters 2 and 3: a sequence in \\(\\mathbb{R}\\) converges if and only if it is Cauchy, precisely because \\(\\mathbb{R}\\) is complete. In a general metric space, the Cauchy condition still makes sense, but completeness is no longer guaranteed; it becomes a property that some spaces enjoy and others lack. This distinction turns out to be one of the most important dividing lines in analysis.</p>
 
                 <p>The notion of convergence — which has been the heartbeat of this entire course — generalizes seamlessly to metric spaces. All we need is a distance function.</p>
 
@@ -943,6 +955,8 @@ window.CHAPTERS.push({
             content: `
                 <h2>Compactness</h2>
 
+                <p>In Chapter 4, the Heine-Borel theorem told us that in \\(\\mathbb{R}\\), "closed and bounded" is the magic combination guaranteeing that every sequence has a convergent subsequence and every continuous function attains its extrema. In general metric spaces, "closed and bounded" is no longer sufficient; we need the more powerful concept of <strong>compactness</strong>, defined through open covers. Understanding why the Heine-Borel characterization fails in infinite-dimensional spaces is one of the key insights of this section.</p>
+
                 <p>Compactness is arguably the most important topological property in analysis. It generalizes the key features of closed bounded subsets of \\(\\mathbb{R}^n\\) — every sequence has a convergent subsequence, and every continuous function attains its maximum.</p>
 
                 <div class="env-block definition">
@@ -1214,6 +1228,8 @@ window.CHAPTERS.push({
             content: `
                 <h2>Connectedness</h2>
 
+                <p>The Intermediate Value Theorem in Chapter 6 told us that a continuous function on an interval cannot "skip" values. The deeper reason, we now see, is that intervals are <em>connected</em>: they cannot be split into two disjoint nonempty open pieces. Connectedness isolates the topological essence of the IVT and extends it to any metric space.</p>
+
                 <p>While compactness generalizes "closed and bounded," <strong>connectedness</strong> generalizes "being in one piece." A connected space cannot be split into two disjoint nonempty open parts.</p>
 
                 <div class="env-block definition">
@@ -1305,6 +1321,14 @@ window.CHAPTERS.push({
                     <div class="env-title">Looking Ahead</div>
                     <div class="env-body">
                         <p>With the concepts of metric spaces, open/closed sets, compactness, completeness, and connectedness, we have built the foundation for <strong>point-set topology</strong>. These ideas underpin all of modern analysis: measure theory, functional analysis, differential geometry, and beyond. The metric space framework is the bridge between the concrete real line and the vast abstract structures of mathematics.</p>
+                    </div>
+                </div>
+
+                <div class="env-block intuition">
+                    <div class="env-title">The Road Ahead</div>
+                    <div class="env-body">
+                        <p>From the Peano axioms through Dedekind cuts, sequences, series, topology, continuity, differentiation, and integration, we built analysis on \\(\\mathbb{R}\\) from the ground up. Metric spaces show that these ideas extend far beyond the real line, to function spaces, probability spaces, and beyond. This is the gateway to functional analysis, measure theory, and modern mathematics.</p>
+                        <p>You now possess the language and the reasoning tools that underpin virtually every branch of modern quantitative science. Wherever your mathematical journey takes you next, the \\(\\varepsilon\\)-\\(\\delta\\) way of thinking you have practiced in this course will remain your most reliable guide.</p>
                     </div>
                 </div>
             `,

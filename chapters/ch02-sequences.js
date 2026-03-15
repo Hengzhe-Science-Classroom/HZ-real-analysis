@@ -12,7 +12,16 @@ window.CHAPTERS.push({
             id: 'ch02-sec01',
             title: 'What Is a Sequence?',
             content: `
+                <div class="env-block bridge">
+                    <div class="env-title">Bridge from Chapter 1</div>
+                    <div class="env-body">
+                        <p>The real numbers are complete: every nonempty set bounded above has a supremum. This chapter puts completeness to work by studying <strong>sequences</strong> and their limits. The \\(\\varepsilon\\)-\\(N\\) definition makes "approaching a value" precise, and the completeness of \\(\\mathbb{R}\\) will guarantee that well-behaved sequences actually converge to a real number (not merely "try" to converge, as can happen in \\(\\mathbb{Q}\\)).</p>
+                    </div>
+                </div>
+
                 <h2>What Is a Sequence?</h2>
+
+                <p class="section-roadmap"><strong>Section roadmap.</strong> We begin with the definition of a sequence, survey several important archetypes (convergent, divergent, oscillating), and distinguish between explicit and recursive definitions. The goal is to build pattern-recognition before we formalize "convergence" in the next section.</p>
 
                 <p>At the heart of analysis lies an embarrassingly simple object: a <strong>sequence</strong> is just a function from the natural numbers to the reals. You feed it \\(1, 2, 3, \\ldots\\) and it hands back real numbers, one at a time. Yet from this humble raw material, the entire edifice of limits, continuity, and integration will be built.</p>
 
@@ -260,6 +269,8 @@ window.CHAPTERS.push({
             title: 'Convergence: The \\(\\varepsilon\\)-\\(N\\) Definition',
             content: `
                 <h2>Convergence: The \\(\\varepsilon\\)-\\(N\\) Definition</h2>
+
+                <p class="section-roadmap"><strong>Section roadmap.</strong> We saw that some sequences "settle down" and others do not. Now we make this distinction perfectly rigorous with the \\(\\varepsilon\\)-\\(N\\) definition. We will work through several proofs from the definition, prove that limits are unique, and formalize divergence.</p>
 
                 <p>Informally, a sequence "converges to \\(L\\)" means the terms get <em>eventually as close as we like</em> to \\(L\\). The genius of Weierstrass's formalization is to replace this vague language with a precise game between a challenger and a defender.</p>
 
@@ -597,6 +608,8 @@ window.CHAPTERS.push({
             content: `
                 <h2>Limit Laws</h2>
 
+                <p class="section-roadmap"><strong>Section roadmap.</strong> The \\(\\varepsilon\\)-\\(N\\) definition is powerful but laborious to apply directly. Here we derive the <em>algebraic limit laws</em> (sum, product, quotient) and the <em>squeeze theorem</em>, which let us compute most limits by combining simpler ones. These results will be our workhorses for the rest of the course.</p>
+
                 <p>Working from the \\(\\varepsilon\\)-\\(N\\) definition every single time would be excruciating. The <em>algebraic limit laws</em> let us compute limits by combining simpler ones, just as arithmetic rules let us build complicated calculations from basic operations.</p>
 
                 <div class="env-block theorem">
@@ -817,6 +830,8 @@ window.CHAPTERS.push({
             content: `
                 <h2>Monotone Convergence & Boundedness</h2>
 
+                <p class="section-roadmap"><strong>Section roadmap.</strong> The limit laws compute limits once we know them, but how do we <em>prove a limit exists</em> in the first place? The Monotone Convergence Theorem gives a clean sufficient condition: bounded + monotone implies convergent. Its proof is our first real deployment of the <em>completeness axiom</em> from Chapter 1.</p>
+
                 <p>We saw that bounded sequences need not converge (example: \\((-1)^n\\)). But if we add <em>monotonicity</em> --- the terms march steadily in one direction --- then boundedness <em>does</em> guarantee convergence. This is one of the most powerful tools in analysis.</p>
 
                 <div class="env-block definition">
@@ -1015,6 +1030,8 @@ window.CHAPTERS.push({
             title: 'Bolzano-Weierstrass & Cauchy Sequences',
             content: `
                 <h2>Bolzano-Weierstrass & Cauchy Sequences</h2>
+
+                <p class="section-roadmap"><strong>Section roadmap.</strong> The Monotone Convergence Theorem demands monotonicity, which many natural sequences lack. We address two questions: (1) can a <em>non-monotone</em> bounded sequence still harbor some convergent structure? (Bolzano-Weierstrass says yes: there is always a convergent subsequence.) (2) Can we test convergence <em>without knowing the limit in advance</em>? The Cauchy criterion answers this, and its equivalence with convergence gives us another face of the completeness of \\(\\mathbb{R}\\).</p>
 
                 <p>The Monotone Convergence Theorem requires monotonicity. What about sequences that bounce around? The Bolzano-Weierstrass theorem says that even a wild bounded sequence has a <em>convergent subsequence</em>. And the Cauchy criterion gives a way to detect convergence <em>without knowing the limit in advance</em>.</p>
 
@@ -1250,6 +1267,8 @@ window.CHAPTERS.push({
             content: `
                 <h2>Limsup and Liminf</h2>
 
+                <p class="section-roadmap"><strong>Section roadmap.</strong> When a sequence diverges, we lose the limit, but we do not lose all information. The Bolzano-Weierstrass theorem guarantees at least one subsequential limit; the \\(\\limsup\\) and \\(\\liminf\\) capture the extreme ones. These tools will become essential in Chapter 3, where the root test and ratio test for series are stated in terms of \\(\\limsup\\).</p>
+
                 <p>Not every bounded sequence converges, but every bounded sequence has a <em>best attempt at a limit from above</em> and <em>from below</em>. These are the <strong>limit superior</strong> and <strong>limit inferior</strong>, two of the most useful technical tools in analysis.</p>
 
                 <div class="env-block definition">
@@ -1318,6 +1337,13 @@ window.CHAPTERS.push({
                     <div class="env-title">Looking ahead</div>
                     <div class="env-body">
                         <p>The limsup and liminf will reappear throughout this course: in the <strong>root test</strong> and <strong>ratio test</strong> for series (Chapter 3), in defining the <strong>radius of convergence</strong> of power series, and in measure theory. They are the Swiss army knife of real analysis --- less elegant than a plain limit, but always available.</p>
+                    </div>
+                </div>
+
+                <div class="env-block bridge">
+                    <div class="env-title">Bridge to Chapter 3</div>
+                    <div class="env-body">
+                        <p>Throughout this chapter we studied <em>individual</em> terms approaching a limit. The next chapter asks a bolder question: what if we <strong>sum</strong> the terms? Given a sequence \\((a_n)\\), the partial sums \\(S_N = a_1 + a_2 + \\cdots + a_N\\) form a new sequence, and asking whether \\((S_N)\\) converges is asking whether an <em>infinite sum</em> makes sense. This leads to the theory of <strong>series</strong>, where convergence of the partial-sum sequence determines whether \\(\\sum_{n=1}^{\\infty} a_n\\) has a finite value. Every tool we built here (the \\(\\varepsilon\\)-\\(N\\) definition, the monotone convergence theorem, the Cauchy criterion, \\(\\limsup\\)) will be put to immediate use.</p>
                     </div>
                 </div>
             `,
